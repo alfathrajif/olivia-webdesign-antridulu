@@ -1,0 +1,71 @@
+@use "./base/reset";
+@use "./base/typography";
+@use "./abstract/color" as color;
+@use "./abstract/mixin" as mixin;
+
+.app {
+  min-height: 100vh;
+  color: darken(color.$neutral, 80%);
+  main.contents {
+    line-height: 2;
+    min-height: calc(100vh - 70px - 200px);
+  }
+}
+
+.social-media {
+  @include mixin.flex($content: center);
+  gap: 10px;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid #f8f9fa;
+    &:hover {
+      border: 3px solid darken(color.$neutral, 50%);
+      background-color: darken(color.$primary, 0%);
+    }
+    svg {
+      path {
+        fill: darken(color.$primary, 10%);
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  @include mixin.flex($content: start);
+  height: 50px;     
+  text-decoration: none;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 700;
+  .title:nth-child(1) {
+    color: darken(color.$neutral, 80%);
+  }
+  .title:nth-child(2) {
+    color: darken(color.$primary, 0%);
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: darken(color.$neutral, 0%);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darken(color.$primary, 0%);
+  border-radius: 10px;
+  border: 2px solid darken(color.$neutral, 0%);
+  &:hover {
+    background: darken(color.$primary, 10%);
+  }
+}

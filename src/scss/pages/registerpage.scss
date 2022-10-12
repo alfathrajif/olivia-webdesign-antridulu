@@ -1,0 +1,172 @@
+@use "../abstract/color" as color;
+@use "../abstract/mixin" as mixin;
+
+.app {
+  @include mixin.flex();
+  .header {
+    background: darken(color.$primary, 0%);
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    padding: 30px;
+    .navbar {
+      width: 100%;
+      min-height: 50px;
+      @include mixin.flex($content: start);
+      &-brand {
+        flex-grow: 1;
+        font-size: 2em;
+        width: 250px;
+        @include mixin.flex($content: start);
+        filter: drop-shadow(1px 1px 1px darken(color.$primary, 20%));
+        .title:nth-child(2) {
+          color: lighten(color.$primary, 50%);
+        }
+      }
+    }
+    .banner {
+      @include mixin.flex($content: center);
+      flex-direction: column;
+      min-height: calc(100vh - 50px - 60px);
+      h1 {
+        font-size: clamp(2rem, 10vw, 2.5vw);
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-align: center;
+        letter-spacing: 0;
+        color: darken(color.$neutral, 0%);
+      }
+      p {
+        text-align: center;
+        font-size: clamp(1.2rem, 10vw, 1vw);
+        line-height: 1.5;
+        font-weight: 300;
+        width: 90%;
+        color: lighten(color.$primary, 60%);
+      }
+      a {
+        width: 100%;
+        max-width: 200px;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        padding: 20px 25px;
+        font-family: "Poppins", sans-serif;
+        margin-top: 40px;
+        border-radius: 5px;
+        color: darken(color.$neutral, 0%);
+        border: 2px solid (darken(color.$neutral, 0%));
+        text-transform: uppercase;
+        font-weight: 600;
+        &:hover {
+          background-color: darken(color.$primary, 5%);
+        }
+        &:active {
+          background-color: darken(color.$primary, 10%);
+        }
+      }
+    }
+  }
+  .contents {
+    background: darken(color.$neutral, 0%);
+    @include mixin.flex();
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    form {
+      @include mixin.flex($content: center);
+      flex-direction: column;
+      width: 100%;
+      h1 {
+        font-size: clamp(2rem, 10vw, 2.3vw);
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-bottom: 30px;
+        color: darken(color.$neutral, 80%);
+      }
+      .social-media {
+        a {
+          border: 2px solid darken(color.$primary, 0%);
+          &:hover {
+            border: 2px solid darken(color.$neutral, 50%);
+            background-color: darken(color.$neutral, 20%);
+          }
+          svg {
+            path {
+              fill: darken(color.$primary, 0%);
+            }
+          }
+        }
+      }
+      p {
+        color: darken(color.$neutral, 60%);
+        margin: 20px 0;
+      }
+      .input-group {
+        @include mixin.flex();
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 500px;
+        input {
+          width: 100%;
+          border: none;
+          font-family: "Poppins", sans-serif;
+          outline: none;
+          font-size: 1rem;
+          padding: 20px 25px;
+          border-radius: 3px;
+          color: darken(color.$neutral, 80%);
+          font-weight: 500;
+          background-color: darken(color.$neutral, 10%);
+          &::placeholder {
+            font-weight: 500;
+            color: darken(color.$neutral, 40%);
+            font-style: italic;
+            font-size: 0.9rem;
+          }
+        }
+        a {
+          width: 100%;
+          max-width: 200px;
+          cursor: pointer;
+          font-size: 1rem;
+          text-decoration: none;
+          text-align: center;
+          display: block;
+          padding: 20px 25px;
+          font-family: "Poppins", sans-serif;
+          margin-top: 30px;
+          border-radius: 5px;
+          text-transform: uppercase;
+          background-color: transparent;
+          font-weight: 600;
+          background-color: darken(color.$primary, 0%);
+          color: darken(color.$neutral, 0%);
+          &:hover {
+            background-color: darken(color.$primary, 5%);
+          }
+          &:active {
+            background-color: darken(color.$primary, 10%);
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    flex-direction: column;
+    .header {
+      min-width: 100%;
+      min-height: auto;
+      .banner {
+        padding: 30px 0;
+        min-height: auto;
+      }
+    }
+    .contents  {
+      min-height: fit-content;
+    }
+  }
+}

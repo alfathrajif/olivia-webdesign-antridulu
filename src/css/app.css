@@ -1,0 +1,123 @@
+@import url("http://fonts.cdnfonts.com/css/poppins");
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.app {
+  min-height: 100vh;
+  color: #262d35;
+}
+.app main.contents {
+  line-height: 2;
+  min-height: calc(100vh - 70px - 200px);
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.social-media a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid #f8f9fa;
+}
+.social-media a:hover {
+  border: 3px solid #657a8e;
+  background-color: #40916c;
+}
+.social-media a svg path {
+  fill: #306e52;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 50px;
+  text-decoration: none;
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 700;
+}
+.navbar-brand .title:nth-child(1) {
+  color: #262d35;
+}
+.navbar-brand .title:nth-child(2) {
+  color: #40916c;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #40916c;
+  border-radius: 10px;
+  border: 2px solid #f8f9fa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #306e52;
+}

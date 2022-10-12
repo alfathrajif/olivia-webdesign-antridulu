@@ -1,0 +1,94 @@
+@use "../abstract/color" as color;
+@use "../abstract/mixin" as mixin;
+
+form {
+  min-height: 100vh;
+  @include mixin.flex($content: center);
+  flex-direction: column;
+  width: 100%;
+  padding: 40px;
+  background-color: darken(color.$primary, 0%);
+  color: darken(color.$neutral, 0%);
+  h1 {
+    font-size: clamp(2rem, 10vw, 2.3vw);
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 30px;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .biodata, .layanan {
+    @include mixin.flex();
+    gap: 0 20px;
+    flex-wrap: wrap;
+  }
+  .input-group {
+    width: 100%;
+    max-width: 620px;
+    #spesialis {
+      width: 100%;
+      #pilih_spesialis {
+        width: 100%;
+      }
+    }
+    &--item {
+      margin-bottom: 15px;
+      label {
+        display: block;
+        margin-bottom: 7px;
+      }
+      input, select {
+        flex-grow: 1;
+        width: 300px;
+        border: none;
+        font-family: "Poppins", sans-serif;
+        outline: none;
+        font-size: 1rem;
+        padding: 12px 20px;
+        border-radius: 3px;
+        color: darken(color.$neutral, 80%);
+        font-weight: 500;
+        background-color: darken(color.$neutral, 0%);
+        &::placeholder {
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.4);
+          font-style: italic;
+          font-size: .9rem;
+        }
+      }
+      p {
+        font-size: .85rem;
+        font-weight: 300;
+        margin-top: 7px;
+        font-style: italic;
+      }
+    }
+    a {
+      width: 100%;
+      max-width: 200px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      padding: 20px 25px;
+      font-family: "Poppins", sans-serif;
+      margin-top: 30px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      background-color: transparent;
+      font-weight: 600;
+      border: 2px solid darken(color.$neutral, 0%);
+      color: darken(color.$neutral, 0%);
+      &:hover {
+        background-color: darken(color.$primary, 5%);
+      }
+      &:active {
+        background-color: darken(color.$neutral, 10%);
+      }
+    }
+  }
+}
